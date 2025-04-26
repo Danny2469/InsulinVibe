@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discussion</title>
+<style>
+ body {
+    background-image: url('ab94i3q4agk21.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto Slab', serif;
+}
+#discussion-form {
+    background-color: #f5f5f5;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+#discussion-form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 10px;
+}
+#discussion-form input[type="text"],
+#discussion-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+#discussion-form button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+#discussion-form button:hover {
+    background-color: #0056b3;
+}
+#discussion-section {
+    margin-top: 20px;
+}
+.discussion-post {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+	 position: absolute;
+	left: -100%;
+	right: 0;
+    bottom: -60%;
+    width: 295.5%;
+}
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+.footer-links ul li {
+    display: inline;
+    margin-right: 20px;
+}
+.footer-links ul li:last-child {
+    margin-right: 0;
+}
+.footer-links a {
+    text-decoration: none;
+    color: #fff;
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+</style>
+</head>
+<body>
+    <h1>Contact Us</h1>
+
+    <form id="discussion-form">
+        <label for="name">Your Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="question">Question or Comment:</label>
+        <textarea id="question" name="question" required></textarea>
+        <button type="submit">Post</button>
+    </form>
+
+     <section id="discussion-section">
+        <div id="comments-list"></div>
+    </section>
+
+    <a href="home.html" class="styled-link">
+    <img src="homebutton.png" alt="Home Icon" style="width: 20px; height: 20px;">
+    </a>
+	
+	<footer>
+    <div class="footer-content">
+        <p>&copy; 2023 T1D-Help</p>
+        <ul class="footer-links">
+            <li><a href="contact us.html">Contact Us</a></li>
+        </ul>
+    </div>    
+    </footer>
+	
+	<script>
+       
+        function submitComment() {
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('question').value;
+            const commentsList = document.getElementById('comments-list');
+
+           
+            const commentElement = document.createElement('div');
+            commentElement.className = 'discussion-post';
+            commentElement.innerHTML = `<strong>${name}:</strong> ${comment}`;
+
+            
+            commentsList.appendChild(commentElement);
+
+           
+            document.getElementById('name').value = '';
+            document.getElementById('question').value = '';
+        }
+
+        
+        document.getElementById('discussion-form').addEventListener('submit', function (e) {
+            e.preventDefault(); // Prevent form submission to a server
+            submitComment(); // Call the function to add the comment
+        });
+    </script>
+</body>
+</html>

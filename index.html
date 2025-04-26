@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Supportive platform for individuals with Type 1 Diabetes. Connect, share, learn, and stay updated with events, stories, and more.">
+    <meta name="keywords" content="Type 1 Diabetes, Diabetes Awareness, Support Group, Health, Merchandise, Events, Stories">
+    <meta name="author" content="Type1DiabetesHub">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insulin Vibes 🩸💙</title>
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            cursor: url('cursor.png'), auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 20px;
+            background-color: steelblue;
+            color: white;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-links {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .nav-links ul li {
+            margin: 0 10px;
+        }
+
+        .nav-links ul li a {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: 700;
+        }
+
+        .nav-links ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .text-box {
+            text-align: center;
+            margin: 20px auto;
+            padding: 20px;
+            max-width: 800px;
+            border-radius: 10px;
+        }
+
+        .highlight {
+            background-color: steelblue;
+            color: white;
+        }
+
+        .text-box h1 {
+            font-size: 36px;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .text-box h2 {
+            font-size: 28px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #4682b4;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: bold;
+        }
+
+        .cta-button:hover {
+            background-color: #315f80;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .footer-links ul li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+        }
+
+        .social-links img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        .email {
+            color: lightblue;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .email a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .email a:hover {
+            text-decoration: underline;
+        }
+
+        .form-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form input,
+        form button {
+            padding: 10px;
+            margin: 10px 5px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+
+        form button {
+            background-color: #4682b4;
+            color: white;
+            cursor: pointer;
+        }
+
+        form button:hover {
+            background-color: #315f80;
+        }
+
+        #topButton {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            padding: 10px;
+            background-color: #4682b4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: none;
+        }
+
+        #topButton:hover {
+            background-color: #315f80;
+        }
+
+        .features {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .feature-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .feature-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .feature-box img {
+            width: 120px; /* Adjusted width */
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .logo {
+                margin-bottom: 10px;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul li {
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="logo">
+            <img src="20250115_192231.png" alt="Type 1 Diabetes Awareness Logo" loading="lazy">
+        </div>
+        <nav class="nav-links" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="merchendise.html">Merchandise</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+                <li><a href="about us.html">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="text-box">
+        <h1>Welcome to the Insulin Vibes Website</h1>
+        <p>We are delighted to have you here! This website was created as a supportive platform for individuals living with Type 1 Diabetes, their families, and those who are newly diagnosed.</p>
+
+        <h2>What You'll Find Here</h2>
+        <p>This website offers a variety of resources designed to empower you in your journey with Type 1 Diabetes:</p>
+        <ul style="text-align: left; margin: 0 auto; max-width: 600px;">
+            <li><strong>Educational Resources:</strong> Access articles, tips, and guides tailored to help you manage your diabetes effectively.</li>
+            <li><strong>Merchandise:</strong> Explore our collection of diabetes awareness merchandise to help spread the message and show your support.</li>
+        </ul>
+
+        <h2>Who We Are</h2>
+        <p>We are a passionate community dedicated to supporting individuals affected by Type 1 Diabetes.</p>
+
+        <div class="form-container">
+            <form action="subscribe.php" method="POST">
+                <label for="email">Subscribe to our newsletter:</label>
+                <input type="email" id="email" name="email" required placeholder="Your email">
+                <button type="submit">Subscribe</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- New Features Section -->
+    <div class="features">
+        <h2>Why Choose Us?</h2>
+        <div class="feature-container">
+            <div class="feature-box">
+                <img src="Education.png" alt="Education">
+                <h3>Educational Resources</h3>
+                <p>Gain valuable knowledge about Type 1 Diabetes through expert guides and articles.</p>
+            </div>
+            <div class="feature-box">
+                <img src="Community.png" alt="Community">
+                <h3>Community Support</h3>
+                <p>Join a supportive community of people who understand and care about your journey.</p>
+            </div>
+            <div class="feature-box">
+                <img src="Merch.jpg" alt="Merchandise">
+                <h3>Merchandise</h3>
+                <p>Wear your support with our exclusive diabetes awareness merchandise.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 InsulinVibes. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="User agreement.html">User Agreement</a></li>
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                <li><a href="Terms of use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61572409861577" target="_blank">
+                <img src="facebook-logo-with-transparent-background-caa_13QRHUq.jpg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/insulin_vibes/" target="_blank">
+                <img src="cool-instagram-logo-with-no-background-649d81-thumb.jpg" alt="Instagram">
+            </a>
+        </div>
+
+        <div class="email">
+            <p>Contact us: <a href="mailto:insulinvibes@gmail.com">insulinvibes@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.getElementById("mobileMenu");
+            if (menu.style.display === "block") {
+                menu.style.display = "none";
+            } else {
+                menu.style.display = "block";
+            }
+        }
+    </script>
+</body>
+
+</html>

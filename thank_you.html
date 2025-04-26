@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You!</title>
+    <!-- Custom Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        /* Basic styling */
+        body {
+            text-align: center;
+            margin-top: 100px;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to bottom right, #f0f8ff, #b0e0e6);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            color: #4682b4;
+            font-size: 3em;
+            margin-bottom: 20px;
+            animation: slideInFromTop 1s ease-in-out;
+        }
+
+        p {
+            color: #555;
+            font-size: 1.5em;
+            margin-bottom: 30px;
+            animation: fadeInText 2s ease-in-out;
+        }
+
+        a {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #4682b4;
+            color: white;
+            border-radius: 30px;
+            font-size: 1.2em;
+            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        a:hover {
+            background-color: #4169e1;
+            transform: translateY(-5px);
+            text-decoration: none;
+            box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideInFromTop {
+            0% {
+                transform: translateY(-100px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInText {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Hover effects for text */
+        h1:hover {
+            color: #4169e1;
+            transition: color 0.3s ease;
+        }
+
+        p:hover {
+            color: #4682b4;
+            transition: color 0.3s ease;
+        }
+
+        /* Smooth scroll */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 50px;
+            color: #4682b4;
+            font-size: 1em;
+        }
+
+        footer p {
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <h1>Thank you for subscribing!</h1>
+    <p>We'll keep you updated with the latest news.</p>
+    <a href="Index.html">Go back to the homepage</a>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 InsulinVibes. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

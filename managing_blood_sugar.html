@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing Blood Sugar - Type 1 Diabetes Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* Gradient background */
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+        }
+
+        /* Container for logo and nav bar */
+        .header {
+            display: flex;
+            align-items: center; /* Center vertically */
+            padding: 10px 20px; /* Padding around the header */
+            background-color: steelblue; /* Ribbon background */
+            color: white; /* Text color for header */
+        }
+
+        .logo {
+            width: 100px; /* Logo width */
+            height: 100px; /* Logo height */
+            border-radius: 50%; /* Circular shape */
+            overflow: hidden; /* Ensure image fits inside the circle */
+            margin-right: 20px; /* Space between logo and buttons */
+        }
+
+        .logo img {
+            width: 100%; /* Make image fill the circle */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .nav-links {
+            flex-grow: 1; /* Take remaining space */
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Align buttons to left */
+        }
+
+        .nav-links ul li {
+            margin: 0 15px; /* Space between buttons */
+        }
+
+        .nav-links ul li a {
+            padding: 10px 20px;
+            background-color: transparent; /* Transparent button background */
+            color: white; /* Text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            font-weight: 700; /* Bold text */
+        }
+
+        .nav-links ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .text-box {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px auto;
+            max-width: 800px; /* Limit width for better readability */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .text-box h1 {
+            font-size: 36px;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .discussion-topics {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0; /* Space above/below topic buttons */
+        }
+
+        .topic-button {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 15px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            text-decoration: none; /* Remove underline */
+        }
+
+        .topic-button:hover {
+            background-color: darkblue;
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .discussion-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid steelblue;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            text-align: left;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .discussion-section h2 {
+            font-size: 28px;
+            color: steelblue;
+            margin-bottom: 15px; /* Space below heading */
+        }
+
+        .comment-box {
+            margin-top: 20px;
+        }
+
+        .comment-box textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.1); /* Inner shadow */
+            font-family: 'Roboto', sans-serif; /* Use same font */
+        }
+
+        .comment-box button {
+            background-color: steelblue;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+        }
+
+        .comment-box button:hover {
+            background-color: darkblue;
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .comments-list {
+            margin-top: 20px;
+        }
+
+        .comment {
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            position: relative; /* For positioning child elements */
+        }
+
+        .response-button {
+            background-color: steelblue;
+            color: white;
+            padding: 5px 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            transition: background-color 0.3s; /* Smooth transitions */
+        }
+
+        .response-button:hover {
+            background-color: darkblue;
+        }
+
+        .response-list {
+            margin-left: 20px;
+            padding-top: 10px;
+            border-left: 2px dashed steelblue; /* Dashed line for visual separation */
+            padding-left: 10px;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px; /* Space above footer */
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .footer-links ul li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .email {
+            color: lightblue; /* Email color */
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .email a {
+            color: rgb(255, 255, 255); /* Email link color */
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .email a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO1.jpg" alt="Logo"> <!-- Replace with your logo path -->
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Discussion.html">Discussion</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="merchendise.html">Merchandise</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="text-box">
+        <h1>Managing Blood Sugar</h1>
+        <p>Discuss strategies, tips, and personal experiences for managing blood sugar levels effectively. Share your insights!</p>
+    </div>
+
+    <div class="discussion-section">
+        <h2>Share Your Thoughts</h2>
+        <div class="comment-box">
+            <textarea placeholder="Type your comment here..."></textarea>
+            <button onclick="addComment()">Submit Comment</button>
+        </div>
+        <div class="comments-list" id="commentsList">
+            <!-- Comments will be displayed here -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Discussion.html">Discussion</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="merchendise.html">Merchandise</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+                </ul>
+            </div>
+            <div class="email">
+                <a href="mailto:your-email@example.com">your-email@example.com</a> <!-- Replace with your email -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function addComment() {
+            const commentText = document.querySelector('.comment-box textarea').value;
+            if (commentText.trim() !== '') {
+                const commentsList = document.getElementById('commentsList');
+                const commentDiv = document.createElement('div');
+                commentDiv.className = 'comment';
+                commentDiv.textContent = commentText;
+                commentsList.appendChild(commentDiv);
+                document.querySelector('.comment-box textarea').value = ''; // Clear text area
+            }
+        }
+    </script>
+</body>
+
+</html>

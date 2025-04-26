@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb); /* Gradient background */
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+        }
+
+        /* Container for logo and nav bar */
+        .header {
+            display: flex;
+            align-items: center; /* Center vertically */
+            padding: 10px 20px; /* Padding around the header */
+            background-color: steelblue; /* Ribbon background */
+            color: white; /* Text color for header */
+        }
+
+        .logo {
+            width: 100px; /* Logo width */
+            height: 100px; /* Logo height */
+            border-radius: 50%; /* Circular shape */
+            overflow: hidden; /* Ensure image fits inside the circle */
+            margin-right: 20px; /* Space between logo and buttons */
+        }
+
+        .logo img {
+            width: 100%; /* Make image fill the circle */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .nav-links {
+            flex-grow: 1; /* Take remaining space */
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: flex-start; /* Align buttons to left */
+        }
+
+        .nav-links ul li {
+            margin: 0 15px; /* Space between buttons */
+        }
+
+        .nav-links ul li a {
+            padding: 10px 20px;
+            background-color: transparent; /* Transparent button background */
+            color: white; /* Text color */
+            text-decoration: none;
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s, transform 0.2s; /* Smooth transitions */
+            font-weight: 700; /* Bold text */
+        }
+
+        .nav-links ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+            transform: scale(1.05); /* Slightly enlarge button on hover */
+        }
+
+        .text-box {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px; /* Rounded corners */
+            margin: 20px auto;
+            max-width: 800px; /* Limit width for better readability */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .text-box h1 {
+            font-size: 36px;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .post-section {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 1px solid steelblue;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .post-section h2 {
+            font-size: 28px;
+            color: steelblue;
+            margin-bottom: 15px; /* Space below heading */
+        }
+
+        .post-section form {
+            display: flex;
+            flex-direction: column; /* Vertical layout for form fields */
+        }
+
+        .post-section label {
+            margin-bottom: 5px; /* Space below labels */
+        }
+
+        .post-section input, 
+        .post-section textarea {
+            padding: 10px;
+            margin-bottom: 20px; /* Space between fields */
+            border: 1px solid #ccc; /* Border for fields */
+            border-radius: 5px; /* Rounded corners */
+            font-size: 16px; /* Font size for input fields */
+        }
+
+        .post-section button {
+            padding: 10px;
+            background-color: steelblue; /* Button background */
+            color: white; /* Text color */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            font-size: 16px; /* Font size for button */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .post-section button:hover {
+            background-color: #004080; /* Darker blue on hover */
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px; /* Space above footer */
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .footer-links ul li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .email {
+            color: lightblue; /* Email color */
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .email a {
+            color: rgb(255, 255, 255); /* Email link color */
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .email a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO1.jpg" alt="Logo"> <!-- Replace with your logo path -->
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="Home.html">Home</a></li>
+                <li><a href="Discussion.html">Discussion</a></li>
+                <li><a href="Events.html">Events</a></li>
+                <li><a href="Post.html">Posts</a></li>
+                <li><a href="merchendise.html">Merchendise</a></li>
+                <li><a href="about us.html">About Us</a></li>
+                <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="text-box">
+        <h1>Post Your Thoughts</h1>
+        <p>Share your thoughts, experiences, and questions about diabetes with our community.</p>
+    </div>
+
+    <div class="post-section">
+        <h2>Create a Post</h2>
+        <form>
+            <label for="title">Post Title:</label>
+            <input type="text" id="title" name="title" required>
+
+            <label for="content">Content:</label>
+            <textarea id="content" name="content" rows="5" required></textarea>
+
+            <button type="submit">Submit Post</button>
+        </form>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 Diabetes Awareness Website</p>
+            <ul class="footer-links">
+                <li><a href="contact us.html">Contact Us</a></li>
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+            </ul>
+        </div>
+        <div class="email">
+            <p>Email: <a href="mailto:diabetesweb0@gmail.com">diabetesweb0@gmail.com</a></p>
+        </div>
+    </footer>
+
+</body>
+
+</html>

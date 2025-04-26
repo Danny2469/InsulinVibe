@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchandise</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #a1c4fd, #c2e9fb);
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            cursor: url('cursor.png'), auto;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Ensures logo stays on the left and nav on the right */
+            padding: 10px 20px;
+            background-color: steelblue;
+            color: white;
+            flex-wrap: wrap; /* Wraps content on smaller screens */
+        }
+
+        .logo {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 20px;
+        }
+
+        .logo img {
+            width: 100%;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1;
+            flex-wrap: wrap;
+            z-index: 10;
+        }
+
+        .nav-links ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            justify-content: center;
+        }
+
+        .nav-links ul li {
+            margin: 0 10px;
+        }
+
+        .nav-links ul li a {
+            padding: 10px 20px;
+            background-color: transparent;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-weight: 700;
+        }
+
+        .nav-links ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+        }
+
+        .text-box {
+            text-align: center;
+            padding: 40px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .text-box h1 {
+            font-size: 36px;
+        }
+
+        .text-box p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        .merchandise-section {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .product {
+            border: 1px solid steelblue;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 10px;
+            text-align: center;
+            width: 200px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .product h3 {
+            font-size: 20px;
+            color: steelblue;
+            margin: 10px 0;
+        }
+
+        .product p {
+            font-size: 16px;
+            margin: 5px 0;
+        }
+
+        .product button {
+            padding: 10px;
+            background-color: steelblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .product button:hover {
+            background-color: darkblue;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+        }
+
+        .footer-links ul li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+
+        .social-links a {
+            margin: 0 15px;
+        }
+
+        .social-links img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            object-fit: cover;
+            transition: transform 0.3s, filter 0.3s;
+        }
+
+        .social-links img:hover {
+            transform: scale(1.2);
+            filter: brightness(1.2);
+        }
+
+        .email {
+            color: lightblue;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .email a {
+            color: rgb(255, 255, 255);
+            text-decoration: none;
+        }
+
+        .email a:hover {
+            text-decoration: underline;
+        }
+
+        /* Make Coming Soon overlay always visible */
+        .coming-soon {
+            position: fixed; /* Fix the overlay to the screen */
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(62, 62, 62, 0.8);
+            color: rgb(0, 221, 255);
+            font-size: 30px;
+            font-family: 'Roboto Slab', serif;
+            font-weight: 700;
+            z-index: 1; /* Lower z-index to allow tab clicks */
+            text-align: center;
+            padding: 0 20px; /* Padding for better spacing on smaller screens */
+            animation: fadeIn 1s ease-in-out;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .coming-soon h2 {
+            margin: 0;
+            transform: scale(1.1);
+            animation: pulse 1.5s infinite;
+            font-size: 40px;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+
+            100% {
+                opacity: 1;
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(1.1);
+            }
+
+            50% {
+                transform: scale(1.15);
+            }
+
+            100% {
+                transform: scale(1.1);
+            }
+        }
+
+        /* Adjust layout for mobile devices */
+        @media screen and (max-width: 768px) {
+            .header {
+                flex-direction: column; /* Stacks logo and nav links vertically */
+                align-items: center; /* Centers everything */
+            }
+
+            .logo {
+                margin-bottom: 10px; /* Adds spacing below the logo */
+            }
+
+            .nav-links {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .nav-links ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .nav-links ul li {
+                margin: 10px 0; /* Adds spacing between stacked items */
+            }
+
+            .text-box h1 {
+                font-size: 28px;
+            }
+
+            .merchandise-section {
+                flex-direction: column;
+            }
+
+            .product {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .social-links img {
+                width: 40px;
+                height: 40px;
+            }
+
+            footer {
+                padding: 10px;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="20250115_192231.png" alt="Logo">
+        </div>
+        <nav class="nav-links">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="merchendise.html">Merchandise</a></li>
+                <li><a href="News.html">News</a></li>
+                <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+                <li><a href="about us.html">About Us</a></li> 
+            </ul>
+        </nav>
+    </header>
+
+    <div class="text-box">
+        <h1>Merchandise</h1>
+        <p>Check out our exclusive merchandise to support diabetes awareness!</p>
+    </div>
+
+    <div class="merchandise-section" id="merchandise-section">
+        <!-- Products will be dynamically inserted here -->
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2024 InsulinVibes. All rights reserved.</p>
+            <ul class="footer-links">
+                <li><a href="User agreement.html">User agreement</a></li>
+                <li><a href="privacy policy.html">Privacy Policy</a></li>
+                <li><a href="Terms of use.html">Terms of Use</a></li>
+            </ul>
+        </div>
+        <div class="social-links">
+            <a href="https://www.facebook.com/profile.php?id=61572409861577" target="_blank">
+                <img src="facebook-logo-with-transparent-background-caa_13QRHUq.jpg" alt="Facebook">
+            </a>
+            <a href="https://www.instagram.com/insulin_vibes/" target="_blank">
+                <img src="cool-instagram-logo-with-no-background-649d81-thumb.jpg" alt="Instagram">
+            </a>
+        </div>
+        <div class="email">
+            <p>Email us at: <a href="mailto:insulinvibes@gmail.com">insulinvibes@gmail.com</a></p>
+        </div>
+    </footer>
+
+    <div class="coming-soon">
+        <h2>Coming Soon!</h2>
+    </div>
+
+    <script>
+        const apiUrl = "https://api.printify.com/v1/products.json"; // Printify API URL
+        const apiKey = "YOUR_API_KEY"; // Replace with your Printify API Key
+
+        async function fetchProducts() {
+            const response = await fetch(apiUrl, {
+                method: 'GET',
+                headers: {
+                    'Authorization': `Bearer ${apiKey}`,
+                    'Content-Type': 'application/json'
+                }
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                displayProducts(data);
+            } else {
+                console.error('Failed to fetch products:', response.statusText);
+            }
+        }
+
+        function displayProducts(products) {
+            const merchandiseSection = document.getElementById('merchandise-section');
+            merchandiseSection.innerHTML = ''; // Clear existing content
+
+            products.data.forEach(product => {
+                const productDiv = document.createElement('div');
+                productDiv.className = 'product';
+                productDiv.innerHTML = `
+                    <img src="${product.images[0].src}" alt="${product.title}">
+                    <h3>${product.title}</h3>
+                    <p>Price: R${(product.variants[0].price / 100).toFixed(2)}</p>
+                    <button>Add to Cart</button>
+                `;
+                merchandiseSection.appendChild(productDiv);
+            });
+        }
+
+        fetchProducts(); // Fetch products when the page loads
+    </script>
+</body>
+
+</html>

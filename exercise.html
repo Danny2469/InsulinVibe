@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise & Fitness - Type 1 Diabetes Awareness</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: linear-gradient(to bottom right, #ff7e5f, #feb47b); /* Warm gradient background */
+            margin: 0;
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Dark text color */
+            line-height: 1.6;
+        }
+
+        /* Header styles */
+        .header {
+            padding: 15px 20px; /* Padding around the header */
+            background-color: #3b5998; /* Header background */
+            color: white; /* Text color for header */
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+
+        .logo {
+            width: 50px; /* Logo width */
+            height: 50px; /* Logo height */
+            border-radius: 50%; /* Circular shape */
+            overflow: hidden; /* Ensure image fits inside the circle */
+            margin-right: 10px; /* Space between logo and buttons */
+        }
+
+        .logo img {
+            width: 100%; /* Make image fill the circle */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .nav-links {
+            flex-grow: 1; /* Take remaining space */
+            display: flex; /* Use flexbox for layout */
+            justify-content: flex-end; /* Align buttons to right */
+        }
+
+        .nav-links a {
+            color: white; /* Button text color */
+            text-decoration: none;
+            margin-left: 15px; /* Space between buttons */
+            padding: 10px; /* Padding for buttons */
+            border-radius: 5px; /* Rounded corners */
+            transition: background-color 0.3s; /* Smooth transitions */
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2); /* Light background on hover */
+        }
+
+        .chat-container {
+            display: flex;
+            flex-direction: column; /* Stack chat messages vertically */
+            align-items: center; /* Center items horizontally */
+            margin: 20px auto; /* Center container */
+            max-width: 800px; /* Limit width for better readability */
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px; /* Rounded corners */
+            padding: 20px; /* Padding around chat */
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Shadow effect */
+        }
+
+        .messages {
+            width: 100%; /* Full width for messages */
+            max-height: 400px; /* Limit height for scrolling */
+            overflow-y: auto; /* Scroll for overflow */
+            border: 1px solid #ccc; /* Border around messages */
+            border-radius: 5px; /* Rounded corners */
+            padding: 10px; /* Padding inside messages */
+            margin-bottom: 15px; /* Space below messages */
+            background-color: #f9f9f9; /* Light background for messages */
+        }
+
+        .message {
+            padding: 10px;
+            margin: 5px 0; /* Space between messages */
+            border-radius: 5px; /* Rounded corners */
+            position: relative; /* For positioning child elements */
+        }
+
+        .message.user {
+            background-color: #d1e7dd; /* Light green for user messages */
+            align-self: flex-end; /* Align to the right */
+        }
+
+        .message.other {
+            background-color: #f8d7da; /* Light red for others' messages */
+            align-self: flex-start; /* Align to the left */
+        }
+
+        .comment-box {
+            display: flex; /* Use flexbox for input area */
+            width: 100%; /* Full width for comment box */
+            margin-top: 10px; /* Space above input area */
+        }
+
+        .comment-box textarea {
+            width: 80%; /* Text area width */
+            height: 50px; /* Text area height */
+            margin-right: 10px; /* Space between textarea and button */
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-family: 'Roboto', sans-serif; /* Use same font */
+        }
+
+        .comment-box button {
+            background-color: #ff6b6b; /* Comment button color */
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s; /* Smooth transitions */
+        }
+
+        .comment-box button:hover {
+            background-color: #ff3b3b; /* Darker shade on hover */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            margin-top: 40px; /* Space above footer */
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-links ul {
+            list-style: none;
+            padding: 0;
+            display: flex; /* Use flexbox for layout */
+        }
+
+        .footer-links ul li {
+            margin-right: 20px;
+        }
+
+        .footer-links a {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        .email {
+            color: lightblue; /* Email color */
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .email a {
+            color: rgb(255, 255, 255); /* Email link color */
+            text-decoration: none; /* Remove underline from link */
+        }
+
+        .email a:hover {
+            text-decoration: underline; /* Underline on hover */
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="logo">
+            <img src="LOGO1.jpg" alt="Logo"> <!-- Replace with your logo path -->
+        </div>
+        <nav class="nav-links">
+            <a href="Index.html">Home</a>
+            <a href="Discussion.html">Discussion</a>
+            <a href="Events.html">Events</a>
+            <a href="merchendise.html">Merchandise</a>
+            <a href="about us.html">About Us</a>
+            <a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a>
+        </nav>
+    </header>
+
+    <div class="chat-container">
+        <h1>Exercise & Fitness Chat</h1>
+        <div class="messages" id="messages">
+            <!-- Messages will be displayed here -->
+        </div>
+
+        <div class="comment-box">
+            <textarea id="messageInput" placeholder="Type your message here..."></textarea>
+            <button onclick="addMessage()">Send</button>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-links">
+                <ul>
+                    <li><a href="Home.html">Home</a></li>
+                    <li><a href="Discussion.html">Discussion</a></li>
+                    <li><a href="Events.html">Events</a></li>
+                    <li><a href="merchendise.html">Merchandise</a></li>
+                    <li><a href="about us.html">About Us</a></li>
+                    <li><a href="Learn about diabetes.html">Learn about Type 1 Diabetes</a></li>
+                </ul>
+            </div>
+            <div class="email">
+                <a href="mailto:your-email@example.com">your-email@example.com</a> <!-- Replace with your email -->
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function addMessage() {
+            const messageText = document.getElementById('messageInput').value;
+            if (messageText.trim() !== '') {
+                const messagesList = document.getElementById('messages');
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message user'; // Assigning class for user message
+                messageDiv.textContent = messageText;
+                messagesList.appendChild(messageDiv);
+                document.getElementById('messageInput').value = ''; // Clear input field
+                messagesList.scrollTop = messagesList.scrollHeight; // Scroll to the bottom
+            }
+        }
+    </script>
+
+</body>
+
+</html>
