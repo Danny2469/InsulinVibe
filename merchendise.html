@@ -222,35 +222,6 @@
             text-decoration: underline;
         }
 
-        /* Make Coming Soon overlay always visible */
-        .coming-soon {
-            position: fixed; /* Fix the overlay to the screen */
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(62, 62, 62, 0.8);
-            color: rgb(0, 221, 255);
-            font-size: 30px;
-            font-family: 'Roboto Slab', serif;
-            font-weight: 700;
-            z-index: 1; /* Lower z-index to allow tab clicks */
-            text-align: center;
-            padding: 0 20px; /* Padding for better spacing on smaller screens */
-            animation: fadeIn 1s ease-in-out;
-            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
-        }
-
-        .coming-soon h2 {
-            margin: 0;
-            transform: scale(1.1);
-            animation: pulse 1.5s infinite;
-            font-size: 40px;
-        }
-
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -374,13 +345,11 @@
         </div>
     </footer>
 
-    <div class="coming-soon">
-        <h2>Coming Soon!</h2>
-    </div>
+   
 
     <script>
-        const apiUrl = "https://api.printify.com/v1/products.json"; // Printify API URL
-        const apiKey = "YOUR_API_KEY"; // Replace with your Printify API Key
+        const apiUrl = "https://printify.com/app/store/products/1"; // Printify API URL
+        const apiKey = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIzN2Q0YmQzMDM1ZmUxMWU5YTgwM2FiN2VlYjNjY2M5NyIsImp0aSI6IjE3MjIyODM2NzdiMWNkOGFhMmQ4YmI0NzgwYjc2Mzg5NmM2NWRjZDQzNzljZWRkY2NkYzIxNjliYTI0NzYzNWZmNTI0MWMwZGE4ZGViYjY3IiwiaWF0IjoxNzUzOTU2OTU3LjQ0NzU4NSwibmJmIjoxNzUzOTU2OTU3LjQ0NzU4NiwiZXhwIjoxNzg1NDkyOTU3LjQ0MDQ0MSwic3ViIjoiMjAwMzk0NzUiLCJzY29wZXMiOlsic2hvcHMubWFuYWdlIiwic2hvcHMucmVhZCIsImNhdGFsb2cucmVhZCIsIm9yZGVycy5yZWFkIiwib3JkZXJzLndyaXRlIiwicHJvZHVjdHMucmVhZCIsInByb2R1Y3RzLndyaXRlIiwid2ViaG9va3MucmVhZCIsIndlYmhvb2tzLndyaXRlIiwidXBsb2Fkcy5yZWFkIiwidXBsb2Fkcy53cml0ZSIsInByaW50X3Byb3ZpZGVycy5yZWFkIiwidXNlci5pbmZvIl19.bDAG7LcyKFqjvwaTc5QFn9DbI5Jft6vfRy4bH1O2gfKzhaUsTM5fFhJI85Rdw6ShdxNoqq9L9YllV1PQuoJ4Sz-9kzrWcPxiR0HKurjMgY8ilQQUISTQ-vfcmVaw06IMtL8C4DS_LdGOBDotkb5BSTAaaIeFfKIcpgYuC9K6GrgxhyGqRVrXrLGOp2j6XkcxMNcVO9wPCd-Cjz_CxGafv4IiCyfRTbWo_QvN5gMCVsR_XC0Rm8gmKu-LcNmHzfvJpeInuqYEug3423x54fmtwg-zmQkTndfKkC6kuTAkuxTIOdWqGop6_SYnRlarwBOEsLFTgu3qpqRUUm28qaV-dn_LJka2A-Kg7mkRahTYAX7JRpqBSuooZCWrNjDOk4cLfXoGHviCUnWqKMrYA94GIKm-k48XYKJm0wfD7kZ21F-m73RKYxFj1kVSpXgl37tWvBHU-SzFpSKhLO39747BEfA30db7Gs5yhsrR2QLGRVWRiZkylFyXNWgbtWE__gZtsAOxt_YliNBpvIlWR8dsfzNMioyVK3vohGpTk0aDp6pvtz_lwmTQYQMRLRg954v1xgsXIPyyVvFj9dIeidO_ln7c195rqag7RlctfPS7FAbmzZdkcDbJkueV9aB3hq9tjsWg7PNRgAUuVz9KQ6ZS_3KclQi1RR6baNJCSFBDgjA"; // Replace with your Printify API Key
 
         async function fetchProducts() {
             const response = await fetch(apiUrl, {
